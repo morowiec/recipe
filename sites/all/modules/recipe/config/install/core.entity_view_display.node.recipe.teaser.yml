@@ -3,6 +3,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.recipe.field_author_email_address
+    - field.field.node.recipe.field_author_name
+    - field.field.node.recipe.field_description
+    - field.field.node.recipe.field_ingredients
+    - field.field.node.recipe.field_instructions
     - node.type.recipe
   module:
     - user
@@ -14,4 +19,9 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_author_email_address: true
+  field_author_name: true
+  field_description: true
+  field_ingredients: true
+  field_instructions: true

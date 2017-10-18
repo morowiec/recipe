@@ -6,4 +6,5 @@ dependencies:
   - field
   - menu_ui
   - node
+  - pathauto
   - user
