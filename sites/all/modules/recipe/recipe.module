@@ -1,0 +1,9 @@
+<?php
+
+function recipe_mail($key, &$message, $params) {
+  if (($key == 'recipe_add')) {
+    $message['from'] = $params['from'];
+    $message['body'] = $params['body'];
+    $message['subject'] = $params['subject'];
+  }
+}

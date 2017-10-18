@@ -94,9 +94,32 @@ class AddRecipe extends FormBase {
 
     $node = \Drupal::entityManager()->getStorage($entity_type)->create($new_recipe);
     $node->save();
-    pathauto_entity_insert($node);
 
-    drupal_set_message($this->t('Your recipe was added correctly'));
+    if ($node->save()) {
+      pathauto_entity_insert($node);
+      drupal_set_message($this->t('Your recipe was added correctly'));
+      // Get the asker account.
+      $email = $form_state->getValue('field_author_email');
+      $params = [
+        'from' => 'recipe@recipe.nl',
+        'body' => 'a',
+        'subject' => $this->t('New recipe'),
+      ];
+      // Send the e-mail to the asker. Drupal calls hook_mail() via this.
+      $mail_sent = \Drupal::service('plugin.manager.mail')->mail('recipe', 'recipe_add', $email, 'en', $params, NULL, TRUE);
+      dpm($mail_sent);
+
+      // Handle sending result.
+      if ($mail_sent) {
+        drupal_set_message($this->t('Check Your email.'));
+      }
+      else {
+        drupal_set_message($this->t('Problem with confirmation email'));
+      }
+    }
+    else {
+      drupal_set_message($this->t('Unexpected error'));
+    }
   }
 
 }
