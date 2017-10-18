@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_author_email_address
+    - node.type.recipe
+id: node.recipe.field_author_email_address
+field_name: field_author_email_address
+entity_type: node
+bundle: recipe
+label: 'Author email address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

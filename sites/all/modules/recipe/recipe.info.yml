@@ -1,0 +1,9 @@
+name: Recipe
+description: 'Provides Recipe content type and related configuration. Use <em>Recipe<em> for your recipe content.'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - menu_ui
+  - node
+  - user

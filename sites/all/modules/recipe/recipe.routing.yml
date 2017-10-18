@@ -1,0 +1,7 @@
+recipe.recipe_add:
+  path: '/recipe/add'
+  defaults:
+    _title: 'Recipe form'
+    _form: '\Drupal\recipe\Form\AddRecipe'
+  requirements:
+    _permission: 'recipe add'

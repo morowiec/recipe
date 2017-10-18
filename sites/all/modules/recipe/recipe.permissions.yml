@@ -1,0 +1,8 @@
+recipe add:
+  title: 'Add recipe'
+  description: 'Allow to add recipe'
+
+recipe manage:
+  title: 'Manage recipe'
+  description: 'Allow to manage recipe'
+  restrict access: TRUE

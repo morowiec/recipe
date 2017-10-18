@@ -1,0 +1,39 @@
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings*.php
+sites/*/services*.yml
+sites/default/default.services.yml
+sites/default/default.settings.php
+sites/development.services.yml
+sites/example.settings.local.php
+sites/example.sites.php
+
+# Ignore paths that contain user-generated content.
+sites/*/files
+sites/*/private
+
+# Ignore SimpleTest multi-site environment.
+sites/simpletest
+
+# Ignore everything but the "sites" folder ( for non core developer )
+.htaccess
+web.config
+.csslintrc
+.editorconfig
+.eslintignore
+.eslintrc
+.eslintrc.json
+.gitattributes
+LICENSE.txt
+README.txt
+autoload.php
+composer.json
+composer.lock
+example.gitignore
+robots.txt
+index.php
+update.php
+/core
+/modules
+/nbproject
+/themes
+/vendor
