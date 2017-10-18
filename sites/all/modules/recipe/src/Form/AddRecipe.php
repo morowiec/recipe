@@ -107,7 +107,6 @@ class AddRecipe extends FormBase {
       ];
       // Send the e-mail to the asker. Drupal calls hook_mail() via this.
       $mail_sent = \Drupal::service('plugin.manager.mail')->mail('recipe', 'recipe_add', $email, 'en', $params, NULL, TRUE);
-      dpm($mail_sent);
 
       // Handle sending result.
       if ($mail_sent) {
